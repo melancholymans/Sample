@@ -2,7 +2,10 @@
 #include <string>
 #include "max.hpp"
 
-int main()
+template<typename T>
+void stck(int n);
+
+	int main()
 {
 	int i = 42;
 	int k = 64;
@@ -19,6 +22,18 @@ int main()
 	i = 24;		//ポインタbookmarkは定数なので変更できないが,ポインタが指している変数は変更できる
 	std::cout << *bookmark << std::endl;
 
+	stck<int>(4);
+
 	getchar();
 	return 1;
+}
+
+
+template<typename T>
+void stck(int n)
+{
+	T* data;
+
+	data = new  T[n];	//配列の動的確保方法(記法)
+
 }
